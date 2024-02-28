@@ -1,0 +1,27 @@
+{
+  "name": "@ei-tech/gcp-storage",
+  "version": "0.0.1",
+  "exports": {
+    "./v1beta1/*": "./dist/v1beta1/*.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@ei-tech/k8s-apimachinery": "workspace:^"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "repository": {
+    "directory": "curated/gcp-storage",
+    "type": "git",
+    "url": "https://github.com/ei-tech/crossplane-typescript.git"
+  }
+}

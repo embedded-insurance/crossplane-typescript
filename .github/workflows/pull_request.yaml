@@ -1,0 +1,67 @@
+name: Pull Request
+
+on:
+  pull_request:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'yarn'
+
+      - name: Auth with npm registry
+        run: |
+          echo 'npmScopes:
+                  ei-tech:
+                    npmAlwaysAuth: true
+                    npmRegistryServer: "https://registry.npmjs.org"
+                    npmAuthToken: ${{ secrets.NPM_TOKEN }}' >> ~/.yarnrc.yml
+
+      - name: Install Dependencies
+        run: yarn --immutable
+
+      - name: Run Tests
+        run: yarn test
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'yarn'
+
+      - name: Auth with npm registry
+        run: |
+          echo 'npmScopes:
+                  ei-tech:
+                    npmAlwaysAuth: true
+                    npmRegistryServer: "https://registry.npmjs.org"
+                    npmAuthToken: ${{ secrets.NPM_TOKEN }}' >> ~/.yarnrc.yml
+
+      - name: Install Dependencies
+        run: yarn --immutable
+
+      - name: Run Build
+        run: yarn build

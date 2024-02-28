@@ -1,0 +1,32 @@
+{
+  "name": "@ei-tech/k8s-api",
+  "version": "0.0.3",
+  "exports": {
+    "./v1/*": "./dist/v1/*.js",
+    "./v1beta1/*": "./dist/v1beta1/*.js",
+    "./v1beta2/*": "./dist/v1beta2/*.js",
+    "./v2/*": "./dist/v2/*.js",
+    "./v2beta2/*": "./dist/v2beta2/*.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@ei-tech/k8s-apimachinery": "workspace:^",
+    "@ei-tech/k8s-core": "workspace:^"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "repository": {
+    "directory": "curated/k8s-api",
+    "type": "git",
+    "url": "https://github.com/ei-tech/crossplane-typescript.git"
+  }
+}

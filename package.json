@@ -1,0 +1,39 @@
+{
+  "name": "crossplane-typescript",
+  "packageManager": "yarn@3.5.1",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo build",
+    "clean": "turbu clean",
+    "test": "turbo test",
+    "format": "yarn turbo format",
+    "version": "yarn changeset version",
+    "release": "yarn workspaces foreach --from '@ei-tech/*' --no-private npm publish --tolerate-republish && yarn changeset tag"
+  },
+  "resolutions": {
+    "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "prettier": "2.8.8",
+    "rimraf": "^5.0.1",
+    "turbo": "^1.9.9",
+    "typescript": "5.2.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "repository": {
+    "directory": ".",
+    "type": "git",
+    "url": "https://github.com/ei-tech/crossplane-typescript.git"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.26.1"
+  }
+}

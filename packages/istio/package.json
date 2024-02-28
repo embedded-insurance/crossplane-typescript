@@ -1,0 +1,7 @@
+{
+  "name": "@ei-tech/istio-crds",
+  "version": "0.0.2",
+  "dependencies": {
+    "@ei-tech/k8s-apimachinery": "workspace:^"
+  }
+}

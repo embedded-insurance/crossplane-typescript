@@ -1,0 +1,27 @@
+{
+  "name": "@ei-tech/k8s-core",
+  "version": "0.0.3",
+  "exports": {
+    "./v1/*": "./dist/v1/*.js"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@ei-tech/k8s-apimachinery": "workspace:^"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "repository": {
+    "directory": "curated/k8s-core",
+    "type": "git",
+    "url": "https://github.com/ei-tech/crossplane-typescript.git"
+  }
+}
