@@ -9,7 +9,7 @@ gen_enforced_dependency(WorkspaceCwd, DependencyIdent, DependencyRange2, Depende
 
 
 gen_enforced_field(WorkspaceCwd, 'engines.node', '>=18').
-gen_enforced_field(WorkspaceCwd, 'license', 'UNLICENSED').
+gen_enforced_field(WorkspaceCwd, 'license', 'MIT').
 gen_enforced_field(WorkspaceCwd, 'repository.type', 'git').
 gen_enforced_field(WorkspaceCwd, 'repository.url', 'https://github.com/ei-tech/crossplane-typescript.git').
 gen_enforced_field(WorkspaceCwd, 'repository.directory', WorkspaceCwd).
